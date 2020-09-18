@@ -28,7 +28,13 @@ RSpec.describe Wallet do
       it 'initializes the balance to the amount given' do
         expect(@my_wallet.balance).to eq(100.50)
       end
+
+      it 'casts an integer amount to float' do
+        my_wallet = Wallet.new(100)
+        expect(my_wallet.balance).to be_a(Float)
+      end
     end
+
 
     context 'when it is initialized with an invalid value' do
       it 'raises an invalid value error for negative amount' do
@@ -77,7 +83,7 @@ RSpec.describe Wallet do
     context 'when there is not enough wallet balance to spend' do
       it 'raises an insufficient balance error' do
         expect{ @my_wallet.spend_money(600) }.to raise_error(/Insufficient funds!/)
-        expect(@my_wallet.balance).to eq(500)
+        expect(@my_wallet.balance).to eq(500.00)
       end
     end
 
