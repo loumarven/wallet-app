@@ -3,7 +3,7 @@ Asssignment app for RSpec learning
 
 ## Versions:
 Ruby: 2.6.6  
-Bundler: 2.1.4
+Bundler: 2.1.4  
 RSpec: See Gemfile
 
 ## Set up:
